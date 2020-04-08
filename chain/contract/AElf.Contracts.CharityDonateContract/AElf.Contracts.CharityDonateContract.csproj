@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>AElf.Contracts.CharityDonateContract</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IsContract>true</IsContract>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <ContractCode Include="..\..\protobuf\charity_donate_contract.proto">
+            <Link>Protobuf\Proto\charity_donate_contract.proto</Link>
+        </ContractCode>
+    </ItemGroup>
+</Project>
