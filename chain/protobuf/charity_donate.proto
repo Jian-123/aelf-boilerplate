@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+import "aelf/core.proto";
+import "aelf/options.proto";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "AElf.Contracts.Charity";
+
+service Charity {
+    option (aelf.csharp_state) = "AElf.Contracts.Charity.CharityState";
+
+    // Actions
+      rpc Initial(google.protobuf.Empty) returns(google.protobuf.Empty){
+      }
+      
+    
+//    
+//    rpc SetUser(User) returns(google.protobuf.Empty){
+//    }
+//
+//    rpc SetProject(ProjectInformation) returns(google.protobuf.Empty){
+//    }
+//
+      rpc Donate(Donation) returns (google.protobuf.Empty){
+      }
+
+    
+    
+      //Views
+
+      rpc GetProject(google.protobuf.Int32Value) returns(Project){
+          option(aelf.is_view) = true;
+      }
+
+      rpc GetDonations(google.protobuf.Int32Value) returns( Donations){
+          option(aelf.is_view) = true;
+      }
+//
+//    rpc CheckMyDonate(aelf.Address) returns( RepeatedField<T>){
+//        option(aelf.is_view) = true;
+//    }
+
+}
+//
+//message User{
+//    aelf.Address id = 1;
+//    string name = 2;
+//    sint32 account = 3;
+//    // repeated Donation donations= 4;
+//    repeated aelf.Hash donationIds =4;
+//}
+//
+//message ProjectInformation{
+//    aelf.Address id = 1;
+//    sint32 amount = 2;
+//    sint32 goal = 3;
+//    google.protobuf.Timestamp endTime = 4;
+//}
+//
+//message Donation{
+//    aelf.Hash id = 1;
+//    aelf.Address from =2;
+//    aelf.Address to =3;
+//    sint32 money =4;
+//    google.protobuf.Timestamp submitTime = 5;
+//}
+//
+//message DonationIds{
+//    repeated aelf.Hash donationIds = 1;
+//}
+
+message Project{
+    sint32 id = 1;
+    aelf.Address creator = 2;
+    string donee = 3;
+    google.protobuf.Timestamp dueDay= 4;
+    Donations donationList =5;
+}
+
+message User{
+    string userName = 1;
+}
+
+message Donation{
+    aelf.Address donor = 1; 
+    sint32 amount = 2; 
+}
+
+message Donations{
+    repeated Donation donationList =1;
+}

@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+import "aelf/core.proto";
+import "aelf/options.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "AElf.Contracts.CharityDonateContract";
+
+service CharityDonateContract {
+    option (aelf.csharp_state) = "AElf.Contracts.CharityDonateContract.CharityDonateContractState";
+
+    rpc Create (CreateInput) returns (google.protobuf.Empty) {
+    }
+    rpc Issue (IssueInput) returns (google.protobuf.Empty) {
+    }
+    rpc Transfer (TransferInput) returns (google.protobuf.Empty) {
+    }
+    
+    
+    
+}
+
+
+
+
+message TokenInfo {
+    string symbol = 1; // 货币的名字
+    string token_name = 2; // token的名字
+    sint64 supply = 3; // 发行量
+    sint64 total_supply = 4; // 总发行量
+    sint32 decimals = 5;
+    aelf.Address issuer = 6; 
+    bool is_burnable = 7;
+    bool is_profitable = 8;
+    sint32 issue_chain_id = 9;
+    sint64 burned = 10;
+}
+
+message CreateInput {
+    string symbol = 1;
+    string token_name = 2;
+    sint64 total_supply = 3;
+    sint32 decimals = 4;
+    aelf.Address issuer = 5;
+    bool is_burnable = 6;
+    repeated aelf.Address lock_white_list = 7;
+    bool is_profitable = 8;
+    int32 issue_chain_id = 9;
+}
+
+
+message IssueInput {
+    string symbol = 1;
+    sint64 amount = 2;
+    string memo = 3;
+    aelf.Address to = 4;
+}
+
+
+message TransferInput {
+    aelf.Address to = 1;
+    string symbol = 2;
+    sint64 amount = 3;
+    string memo = 4;
+}
+
+// Events
+
+message Transferred {
+    option (aelf.is_event) = true;
+    aelf.Address from = 1 [(aelf.is_indexed) = true];
+    aelf.Address to = 2 [(aelf.is_indexed) = true];
+    string symbol = 3 [(aelf.is_indexed) = true];
+    sint64 amount = 4;
+    string memo = 5;
+}

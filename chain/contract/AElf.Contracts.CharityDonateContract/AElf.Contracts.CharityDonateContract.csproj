@@ -8,8 +8,16 @@
     </PropertyGroup>
     
     <ItemGroup>
-        <ContractCode Include="..\..\protobuf\charity_donate_contract.proto">
-            <Link>Protobuf\Proto\charity_donate_contract.proto</Link>
+        <ContractCode Include="..\..\protobuf\charity_donate.proto">
+            <Link>Protobuf\Proto\charity_donate.proto</Link>
         </ContractCode>
+        <ContractReference Include="..\..\protobuf\charity_account.proto">
+            <Link>Protobuf/Proto/charity_account.proto</Link>
+        </ContractReference>
+        <ContractReference Include="..\..\protobuf\charity_account.proto">
+        <Link>Protobuf/Proto/charity_transfer.proto</Link>
+        </ContractReference>
     </ItemGroup>
+    
+    
 </Project>

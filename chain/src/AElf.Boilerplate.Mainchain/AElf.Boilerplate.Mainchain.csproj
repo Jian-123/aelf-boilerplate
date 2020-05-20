@@ -41,6 +41,12 @@
             <OutputItemType>Contract</OutputItemType>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </ProjectReference>
+        
+        <ProjectReference Include="..\..\contract\AElf.Contracts.CharityTest\AElf.Contracts.CharityTest.csproj">
+            <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+            <OutputItemType>Contract</OutputItemType>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </ProjectReference>
     </ItemGroup>
 
     <ItemGroup>
@@ -119,5 +125,9 @@
         <ContractStub Include="..\..\protobuf\greeter_contract.proto">
             <Link>Protobuf\Proto\greeter_contract.proto</Link>
         </ContractStub>
+
+        <ContractStub Include="..\..\protobuf\charitytest.proto">
+            <Link>Protobuf\Proto\charitytest.proto</Link>
+        </ContractStub> 
     </ItemGroup>
 </Project>

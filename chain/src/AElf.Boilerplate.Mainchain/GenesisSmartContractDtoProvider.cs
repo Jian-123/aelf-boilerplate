@@ -47,6 +47,8 @@ namespace AElf.Blockchains.MainChain
                 GetGenesisSmartContractDtosForBingoGame(),
                 GetGenesisSmartContractDtosForLotteryDemo(),
                 GetGenesisSmartContractDtosForGreeter(),
+                
+                GetGenesisSmartContractDtosForCharityTest()
             }.SelectMany(x => x);
         }
     }
