@@ -184,9 +184,14 @@ namespace AElf.Contracts.BingoGameContract
             var randomHash = targetRound.RealTimeMinersInformation.Values.First(i => i.PreviousInValue != null).PreviousInValue;
             // 赢没赢
             var isWin = ConvertHashToBool(randomHash);
+<<<<<<< HEAD
             // 使用随机哈希数和用户种子计算出一个新的hash
             var usefulHash = Hash.FromTwoHashes(randomHash, playerInformation.Seed);
             // 根据这个hash的稀有性种类，与玩家用户的下注数额计算可能赢得的奖金/赔掉的钱
+=======
+
+            var usefulHash = HashHelper.ConcatAndCompute(randomHash, playerInformation.Seed);
+>>>>>>> e6ce186fc6c5be1560d86139efc3a05901aefb3b
             var award = CalculateAward(boutInformation.Amount, GetKindFromHash(usefulHash));
             // 根据赢没赢判断这笔钱是赚还是赔
             award = isWin ? award : -award;
