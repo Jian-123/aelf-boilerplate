@@ -34,13 +34,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.GreeterContr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Boilerplate.Tester", "src\AElf.Boilerplate.Tester\AElf.Boilerplate.Tester.csproj", "{217599C5-2CF0-411E-97B5-5657739CEE5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.CharityDonateContract", "contract\AElf.Contracts.CharityDonateContract\AElf.Contracts.CharityDonateContract.csproj", "{8A4D9DA6-CE7B-4401-BB01-638453E7A7BB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.Charity", "contract\AElf.Contracts.Charity\AElf.Contracts.Charity.csproj", "{2F316242-CA74-472A-B449-11996D5D8AD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.CharityTest", "contract\AElf.Contracts.CharityTest\AElf.Contracts.CharityTest.csproj", "{13A17346-447D-4485-AD98-17C69BBD04F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.Charity.Test", "test\AElf.Contracts.Charity.Test\AElf.Contracts.Charity.Test.csproj", "{2DC2FFAB-D10D-4126-8DC5-D3FCC3F6C2B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.CharityTest.Test", "test\AElf.Contracts.CharityTest.Test\AElf.Contracts.CharityTest.Test.csproj", "{2DC2FFAB-D10D-4126-8DC5-D3FCC3F6C2B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.CharityManagementss", "contract\AElf.Contracts.CharityManagementss\AElf.Contracts.CharityManagementss.csproj", "{FED4491A-B50F-4845-A172-1DF1081A6419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.CharityManagement", "contract\AElf.Contracts.CharityManagement\AElf.Contracts.CharityManagement.csproj", "{15EA5E75-A74D-464B-A525-61EC7FEA12F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AElf.Contracts.CharityX", "AElf.Contracts.CharityX\AElf.Contracts.CharityX.csproj", "{37DAE725-FF63-4AFB-A2F7-9508DD1035B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,10 +96,6 @@ Global
 		{217599C5-2CF0-411E-97B5-5657739CEE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217599C5-2CF0-411E-97B5-5657739CEE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217599C5-2CF0-411E-97B5-5657739CEE5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A4D9DA6-CE7B-4401-BB01-638453E7A7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A4D9DA6-CE7B-4401-BB01-638453E7A7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A4D9DA6-CE7B-4401-BB01-638453E7A7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A4D9DA6-CE7B-4401-BB01-638453E7A7BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F316242-CA74-472A-B449-11996D5D8AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F316242-CA74-472A-B449-11996D5D8AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F316242-CA74-472A-B449-11996D5D8AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -108,6 +108,18 @@ Global
 		{2DC2FFAB-D10D-4126-8DC5-D3FCC3F6C2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DC2FFAB-D10D-4126-8DC5-D3FCC3F6C2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DC2FFAB-D10D-4126-8DC5-D3FCC3F6C2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED4491A-B50F-4845-A172-1DF1081A6419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED4491A-B50F-4845-A172-1DF1081A6419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED4491A-B50F-4845-A172-1DF1081A6419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED4491A-B50F-4845-A172-1DF1081A6419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15EA5E75-A74D-464B-A525-61EC7FEA12F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15EA5E75-A74D-464B-A525-61EC7FEA12F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15EA5E75-A74D-464B-A525-61EC7FEA12F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15EA5E75-A74D-464B-A525-61EC7FEA12F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DAE725-FF63-4AFB-A2F7-9508DD1035B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DAE725-FF63-4AFB-A2F7-9508DD1035B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DAE725-FF63-4AFB-A2F7-9508DD1035B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DAE725-FF63-4AFB-A2F7-9508DD1035B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,10 +136,12 @@ Global
 		{4C0F6A56-667B-4534-A60F-CDAC5F3A5534} = {5C980166-C987-470D-AEE0-3858A170A903}
 		{B177712A-3005-41CC-965A-62FFA32545DD} = {DBC47323-E6A2-42A2-A624-CE2EE6139567}
 		{217599C5-2CF0-411E-97B5-5657739CEE5D} = {21D85A91-5BB8-4912-8107-49435A461AAC}
-		{8A4D9DA6-CE7B-4401-BB01-638453E7A7BB} = {5C980166-C987-470D-AEE0-3858A170A903}
 		{2F316242-CA74-472A-B449-11996D5D8AD4} = {5C980166-C987-470D-AEE0-3858A170A903}
 		{13A17346-447D-4485-AD98-17C69BBD04F9} = {5C980166-C987-470D-AEE0-3858A170A903}
 		{2DC2FFAB-D10D-4126-8DC5-D3FCC3F6C2B6} = {DBC47323-E6A2-42A2-A624-CE2EE6139567}
+		{FED4491A-B50F-4845-A172-1DF1081A6419} = {5C980166-C987-470D-AEE0-3858A170A903}
+		{15EA5E75-A74D-464B-A525-61EC7FEA12F0} = {5C980166-C987-470D-AEE0-3858A170A903}
+		{37DAE725-FF63-4AFB-A2F7-9508DD1035B4} = {5C980166-C987-470D-AEE0-3858A170A903}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7426B41-E959-40E4-9ED8-ED8D9C50F133}

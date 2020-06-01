@@ -28,8 +28,8 @@
       <Link>Protobuf/Proto/basic_contract_zero.proto</Link>
     </ContractReference>
     <ContractReference Include="..\..\protobuf\token_contract.proto">
-      <Link>Protobuf/Proto/token_contract.proto</Link>
-    </ContractReference>
+    <Link>Protobuf/Proto/token_contract.proto</Link>
+  </ContractReference>
     <ContractReference Include="..\..\protobuf\aedpos_contract.proto">
       <Link>Protobuf/Proto/aedpos_contract.proto</Link>
     </ContractReference>

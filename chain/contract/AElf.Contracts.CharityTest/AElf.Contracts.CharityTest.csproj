@@ -11,6 +11,15 @@
         <ContractCode Include="..\..\protobuf\charitytest.proto">
             <Link>Protobuf\Proto\charitytest.proto</Link>
         </ContractCode>
+
+        <ContractReference Include="..\..\protobuf\token_contract.proto">
+            <Link>Protobuf/Proto/token_contract.proto</Link>
+        </ContractReference>
+        <ContractReference Include="..\..\protobuf\aedpos_contract.proto">
+            <Link>Protobuf/Proto/aedpos_contract.proto</Link>
+        </ContractReference>
     </ItemGroup>
 
+    
+    
 </Project>

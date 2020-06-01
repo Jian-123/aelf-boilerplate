@@ -1,4 +1,5 @@
 using Google.Protobuf.WellKnownTypes;
+using AElf.Contracts.MultiToken;
 
 using AElf.Types;
 
@@ -12,10 +13,7 @@ namespace AElf.Contracts.Charity
         //     return new Empty();
         // }
 
-        public override  Project GetProject(Int32Value input)
-        {
-            return State.Projects[input] ?? new Project();
-        }
+        public int totalProjects =  0;
 
         public override Empty Donate(Donation input)
         {
@@ -32,9 +30,25 @@ namespace AElf.Contracts.Charity
             return new Empty();
         }
 
+        public override Empty SetProject(Project input) // 增加项目
+        {
+            var proID = new Int32Value
+            {
+                Value = totalProjects
+            };
+            totalProjects++; 
+            State.Projects.Set(proID,input);
+            return new Empty();
+        } 
+        
+        public override  Project GetProject(Int32Value input)  // 查询项目
+        {
+            return State.Projects[input] ?? new Project();
+        }
         
         
-        public override Donations GetDonations(Int32Value input)
+        
+        public override Donations GetDonations(Int32Value input)  // 获取项目的捐赠信息
         {
             var donations = State.Projects[input].DonationList;
             return donations;

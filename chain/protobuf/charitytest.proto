@@ -8,35 +8,85 @@ import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "AElf.Contracts.CharityTest";
 
-service Charity {
+service CharityTest {
     option (aelf.csharp_state) = "AElf.Contracts.CharityTest.CharityTestState";
     
+  
+
     // Actions
 
-    rpc Initial(google.protobuf.Empty) returns(google.protobuf.Empty){
-    }
-    
-    rpc Set(Project) returns(google.protobuf.Empty){
-    }
-    
-    rpc Test1(Testmessage1) returns(Testmessage1){
+    rpc Initial (google.protobuf.Empty) returns (google.protobuf.Empty) {
     }
 
-    // Views:
+    rpc Register (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    }
+
+    rpc Deposit (aelf.SInt64Value) returns (google.protobuf.Empty) {
+    }
     
-    rpc Get(google.protobuf.Empty) returns(Project){
+    rpc SetProject (NewProject) returns (google.protobuf.Int32Value) {
+    }
+
+    rpc Donate(NewDonation) returns(google.protobuf.Empty){
+    }
+
+    // Views
+
+    rpc GetProject (google.protobuf.Int32Value) returns (ProjectInformation){
+        option(aelf.is_view) = true;
+    }
+    
+    rpc TestAdd (AddInput) returns (google.protobuf.Int32Value){
+        option(aelf.is_view) = true;
     }
 }
 
 
-message Project{
-    sint32 id = 1;  // sint32算是int类型，不同于SIntValue类型
+
+
+message UserInformation{
+    aelf.Hash seed = 1;
+    repeated Donation donations = 2;
+}
+
+
+message ProjectInformation{
+    int32 id = 1;
     aelf.Address creator = 2;
-    string donee = 3;
-    google.protobuf.Timestamp dueDay= 4;
+    string title = 3;
+    string description = 4;
+    // google.protobuf.Timestamp startupTime = 5;
+    // google.protobuf.Timestamp deadLine = 5; 
+    repeated Donation donationList = 5;
 }
 
-message Testmessage1{
-    sint32 intKey = 1;
-    string stringValue = 2;
+
+
+message NewDonation{
+    int32 amount = 1;
+    int32 toID = 2;
+    string memo = 3;
+}
+
+message Donation{
+    aelf.Hash id = 1;
+    aelf.Address from = 2;
+    aelf.Address to = 3;
+    int32 amount = 4;
+    google.protobuf.Timestamp dillTime = 5;
+    string memo = 6;
+}
+
+
+message NewProject{ 
+    string title = 1;
+    string description = 2;
+    // google.protobuf.Timestamp startupTime = 5;
+    // google.protobuf.Timestamp deadLine = 5; 
+}
+
+
+message AddInput{
+    int32 a = 1;
+    int32 b = 2;
 }

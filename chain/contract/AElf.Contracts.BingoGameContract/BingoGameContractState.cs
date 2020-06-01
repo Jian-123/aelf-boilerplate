@@ -10,7 +10,6 @@ namespace AElf.Contracts.BingoGameContract
         public SingletonState<bool> Initialized { get; set; }
 
         public MappedState<Address, PlayerInformation> PlayerInformation { get; set; }
-        
-        
+
     }
 }

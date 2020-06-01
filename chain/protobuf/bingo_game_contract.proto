@@ -33,16 +33,16 @@ service BingoGameContract {
     }
 }
 
-message PlayerInformation {
+message PlayerInformation {  // 玩家信息
     aelf.Hash seed = 1;
-    repeated BoutInformation bouts = 2;
+    repeated BoutInformation bouts = 2;  // repeated就是可以有好几个，能往里面加
 }
 
-message BoutInformation {
-    sint64 play_round_number = 1;
-    sint64 amount = 2;
-    sint64 award = 3;
-    bool is_complete = 4;
-    aelf.Hash play_id = 5;
-    sint64 bingo_round_number = 6;
+message BoutInformation {  // 一次下注（一个回合）的游戏信息
+    sint64 play_round_number = 1;  //  这是第几个回合
+    sint64 amount = 2;  // 下注多少
+    sint64 award = 3;  // 奖金多少
+    bool is_complete = 4;  // 该回合是否结束
+    aelf.Hash play_id = 5;  // 玩游戏的那个hash
+    sint64 bingo_round_number = 6;  // 本回合已经Bingo几次
 }

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+import "aelf/core.proto";
+import "aelf/options.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "AElf.Contracts.CharityManagement";
+
+service CharityManagement {
+    option (aelf.csharp_state) = "AElf.Contracts.CharityManagement.CharityManagementState";
+
+    // Actions:
+    rpc SetProject (ProjectInformation) returns (google.protobuf.Empty) {
+    }
+
+    rpc Donate(DonationInput) returns(google.protobuf.Empty){
+    }
+    
+    // Views:
+
+    rpc GetProject (google.protobuf.Int32Value) returns (ProjectInformation){
+        option(aelf.is_view) = true;
+    }
+    
+}
+
+
+message ProjectInformation{
+    google.protobuf.Int32Value id = 1;
+    aelf.Address creator = 2;
+    string donee = 3;
+    // Context.CurrentBlockTime dueDay = 4;
+    repeated Donation donationList =5;
+}
+
+message DonationInput{
+    int32 donationID = 1;
+    string memo = 2;
+}
+
+message Donation{
+    int32 id =1;
+}
+

@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+            <RootNamespace>AElf.Contracts.CharityTest</RootNamespace> <!--需要设定相应的名字空间-->
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AElf.Blockchains.BasicBaseChain.ContractNames" Version="1.0.0-preview1" />
+        <PackageReference Include="AElf.Runtime.CSharp" Version="1.0.0-preview1" />
+        <PackageReference Include="coverlet.msbuild" Version="2.5.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+        <PackageReference Include="xunit" Version="2.4.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+        <PackageReference Include="xunit.runner.console" Version="2.4.1" />
+        <PackageReference Include="coverlet.collector" Version="1.0.1" />
+        
+        
+    </ItemGroup>
+
+    <ItemGroup>
+        <!--需要引入测试包，最新版-->
+        <PackageReference Include="AElf.Contracts.TestKit" Version="0.9.0" />  
+    </ItemGroup>
+
+    <ItemGroup>
+
+        <!--需要0合约来部署-->
+        <ContractStub Include="..\..\protobuf\acs0.proto">
+            <Link>Protobuf\Proto\acs0.proto</Link>
+        </ContractStub>
+
+        <!--引入合约生明-->
+        <ContractStub Include="..\..\protobuf\charitytest.proto">
+            <Link>Protobuf\Proto\charitytest.proto</Link>
+        </ContractStub>
+
+        <ContractStub Include="..\..\protobuf\token_contract.proto">
+            <Link>Protobuf/Proto/token_contract.proto</Link>
+        </ContractStub>
+        <ContractStub Include="..\..\protobuf\aedpos_contract.proto">
+            <Link>Protobuf/Proto/aedpos_contract.proto</Link>
+        </ContractStub>
+        
+
+    </ItemGroup>
+
+    <ItemGroup>
+        <!--引入合约实现的csproj-->
+        <ProjectReference Include="..\..\contract\AElf.Contracts.CharityTest\AElf.Contracts.CharityTest.csproj" />
+    </ItemGroup>
+    
+</Project>

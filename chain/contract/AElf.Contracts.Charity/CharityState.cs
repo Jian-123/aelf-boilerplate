@@ -1,7 +1,7 @@
 using AElf.Sdk.CSharp.State;
 using AElf.Types;
 using Google.Protobuf.WellKnownTypes;
-
+using AElf.Contracts.MultiToken;
 namespace AElf.Contracts.Charity
 {
     public class CharityState : ContractState
@@ -12,5 +12,7 @@ namespace AElf.Contracts.Charity
         // public MappedState<Address, Project> Projects { get; set; } // 每个项目拥有一个地址
         public MappedState<Address, User> Users { get; set; } // 每个用户有一个地址
         public MappedState<Int32Value, Project> Projects { get; set; } // 每个项目拥有一个id
+        
+        internal TokenContractContainer.TokenContractReferenceState TokenContract { get; set; }
     }
 }

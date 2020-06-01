@@ -3,11 +3,16 @@ using AElf.Types; // Address类所在
 
 namespace AElf.Contracts.CharityTest
 {
-    public class CharityTestState: ContractState
+    public partial class CharityTestState: ContractState
     {
-        public SingletonState<Project> Projects { set; get; } // 必须public
-        public MappedState<int,Testmessage1> Tests1 { get; set; } // 第一项是Key，后面是Value
-        public MappedState<int,string> Tests2 { get; set; } // 第一项是Key，后面是Value
  
+        
+        
+        public SingletonState<bool> Initialized { get; set; }  // 是否初始化，未必有用
+        public SingletonState<int> NumberOfProjects { get; set; }  // 系统上的项目总数
+        
+        public MappedState<Address, UserInformation> UserInformations{ get; set; }
+        public MappedState<int, ProjectInformation> ProjectInformations{ get; set; }
+
     }
 }

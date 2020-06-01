@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>AElf.Contracts.CharityManagement</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IsContract>true</IsContract>
+    </PropertyGroup>
+
+    
+    
+    <ItemGroup>
+    <ContractCode Include="..\..\protobuf\charity_management.proto">
+        <Link>Protobuf/Proto/charity_management.proto</Link>
+    </ContractCode>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AElf.Contracts.MultiToken" Version="1.0.0-preview1" />
+        <PackageReference Include="AElf.CSharp.Core" Version="1.0.0-preview1" />
+    </ItemGroup>
+
+</Project>

@@ -10,8 +10,8 @@ import "google/protobuf/timestamp.proto";
 service CharityAccount {
     option (aelf.csharp_state) = "AElf.Contracts.Charity.CharityAccountState";
 
-    rpc Initial (google.protobuf.Empty) returns (google.protobuf.Empty) {
-    }
+   // rpc Initial (google.protobuf.Empty) returns (google.protobuf.Empty) {
+   // }
 //    rpc Create (CreateInput) returns (google.protobuf.Empty) {
 //    }
 //    rpc Issue (IssueInput) returns (google.protobuf.Empty) {

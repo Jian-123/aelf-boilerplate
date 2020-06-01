@@ -7,11 +7,17 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 
+import "charity_account.proto";
+
 option csharp_namespace = "AElf.Contracts.Charity";
+
 
 service Charity {
     option (aelf.csharp_state) = "AElf.Contracts.Charity.CharityState";
-
+    //
+    option (aelf.base) = "charity_account.proto";
+    
+    
     // Actions
       rpc Initial(google.protobuf.Empty) returns(google.protobuf.Empty){
       }
@@ -21,9 +27,9 @@ service Charity {
 //    rpc SetUser(User) returns(google.protobuf.Empty){
 //    }
 //
-//    rpc SetProject(ProjectInformation) returns(google.protobuf.Empty){
-//    }
-//
+      rpc SetProject(Project) returns(google.protobuf.Empty){
+      }
+
       rpc Donate(Donation) returns (google.protobuf.Empty){
       }
 

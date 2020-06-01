@@ -117,16 +117,16 @@ service TokenContract {
 }
 
 message TokenInfo {
-    string symbol = 1;
-    string token_name = 2;
-    sint64 supply = 3;
-    sint64 total_supply = 4;
-    sint32 decimals = 5;
-    aelf.Address issuer = 6;
-    bool is_burnable = 7;
-    bool is_profitable = 8;
-    sint32 issue_chain_id = 9;
-    sint64 burned = 10;
+     string symbol = 1;
+     string token_name = 2;
+     sint64 supply = 3;
+     sint64 total_supply = 4;
+     sint32 decimals = 5;
+     aelf.Address issuer = 6;
+     bool is_burnable = 7;
+     bool is_profitable = 8;
+     sint32 issue_chain_id = 9;
+     sint64 burned = 10;
 }
 
 message CreateInput {
